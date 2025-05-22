@@ -1,0 +1,29 @@
+.caja-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px 15px;
+    margin-left: 100px;
+    border: solid 1px;
+    width: 350px;
+    gap: 30px;
+
+}
+
+.caja-contenedor {
+    color: white;
+    background-color: rgb(24, 138, 30);
+    border: 3px black;
+    padding: 30px 20px 30px 10px;
+    border: solid 1px rgb(255, 255, 255);
+    margin-right: 15px;
+}
+
+.caja-contenedor2 {
+    color: white;
+    background-color: rgb(97, 14, 122);
+    border: 3px black;
+    padding: 30px 20px 30px 15px;
+    border: solid 1px rgb(255, 255, 255);
+    margin-left: 15px;
+}

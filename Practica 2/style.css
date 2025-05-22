@@ -1,0 +1,94 @@
+  body {
+      background-color: #0d0c1b;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+  }
+
+  .container {
+      width: 300px;
+      margin: 0 auto;
+      padding-top: 40px;
+      text-align: center;
+  }
+
+  .logo img {
+      width: 100%;
+      max-width: 300px;
+  }
+
+  h2 {
+      color: white;
+      margin-top: 30px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #111;
+      border: 1px solid #333;
+      color: white;
+  }
+
+  .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 20px;
+  }
+
+  .buttons {
+      display: flex;
+  }
+
+  .buttons button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      color: white;
+      cursor: pointer;
+  }
+
+  .register-btn {
+      background-color: #1c2535;
+  }
+
+  .login-btn {
+      background-color: #7a3bdc;
+  }
+
+  .social {
+      margin-top: 50px;
+  }
+
+  .social h3 {
+      font-size: 16px;
+  }
+
+  .icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+  }
+
+  .icons a img {
+      width: 30px;
+      height: 30px;
+  }
+
+  .footer-links {
+      margin-top: 20px;
+      font-size: 12px;
+  }
+
+  .footer-links a {
+      display: block;
+      color: #aaa;
+      margin-top: 5px;
+      text-decoration: none;
+  }

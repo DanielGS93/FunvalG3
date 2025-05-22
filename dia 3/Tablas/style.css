@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border: dotted 3px green;
+    margin-left: 40px;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+thead th {
+    border: solid 3px green;
+}
+
+tbody td {
+    border: solid 3px green;
+}
