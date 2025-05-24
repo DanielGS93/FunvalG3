@@ -1,0 +1,17 @@
+/*
+static: es el valor por defecto, estatico.
+absolute: se mueve segun su padre directo de su variable la relacion sin dejar un espacio vacio.
+fixed: 
+stiked:
+relative: relativo a su position original.
+
+*/
+/*z-index
+elementos que tengan position definida
+elementos que no tengan position definida
+*/
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}

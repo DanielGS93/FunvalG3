@@ -1,0 +1,102 @@
+body {
+    background-color: #ffffff;
+    color: #f28b82;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+
+header {
+    background-color: black;
+    border: 2px solid #f28b82;
+    padding: 1em;
+    text-align: center;
+}
+
+header h1 {
+    color: #34a853;
+    font-size: 2em;
+    margin: 0.3em 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1em;
+}
+
+nav a {
+    color: #f28b82;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.contenido {
+    display: flex;
+    padding: 2em;
+    border: 2px solid #34a853;
+    margin: 1em;
+}
+
+.principal {
+    position: relative;
+    width: 400px;
+    height: 200px;
+}
+
+.principal div {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.verde {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 200px;
+    height: 150px;
+    background-color: #004d00;
+    border-radius: 10px;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.marron {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 250px;
+    height: 150px;
+    background-color: #4d3300;
+    border-radius: 10px;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+.noticia {
+    position: absolute;
+    top: 160px;
+    /* Ajusta según la altura del encabezado */
+    right: 40px;
+    width: 200px;
+    border: 2px solid #f28b82;
+    padding: 1em;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.noticia div {
+    width: 100px;
+    height: 60px;
+    margin: 0 auto 1em;
+    border: 2px solid #f28b82;
+    border-radius: 10px;
+}
+
+.noticia p {
+    font-size: 1.8em;
+}
