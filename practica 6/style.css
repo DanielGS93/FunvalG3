@@ -1,0 +1,52 @@
+/* style.css */
+
+/* Fuente y transición */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Botones con efecto suave */
+button {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+button:hover {
+  transform: scale(1.03);
+}
+
+/* Fondo degradado en modo claro */
+body:not(.dark) {
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+}
+
+/* Sombra más suave */
+.shadow-2xl {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Scrollbar personalizado */
+#historial {
+  scrollbar-width: thin;
+  scrollbar-color: #90cdf4 #f0f4f8;
+}
+#historial::-webkit-scrollbar {
+  width: 6px;
+}
+#historial::-webkit-scrollbar-thumb {
+  background-color: #90cdf4;
+  border-radius: 4px;
+}
+#historial::-webkit-scrollbar-track {
+  background-color: #f0f4f8;
+}
+
+/* Scrollbar modo oscuro */
+body.dark #historial {
+  scrollbar-color: #60a5fa #1f2937;
+}
+body.dark #historial::-webkit-scrollbar-thumb {
+  background-color: #60a5fa;
+}
+body.dark #historial::-webkit-scrollbar-track {
+  background-color: #1f2937;
+}

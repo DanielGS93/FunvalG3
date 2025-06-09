@@ -273,7 +273,7 @@ switch (idioma) {
     console.log("idioma no registrado");
 }
 
-let nombreUsuario = prompt("ingresa tu nombre x favor :D");
+/* let nombreUsuario = prompt("ingresa tu nombre x favor :D");
 let edadUsuario = prompt("ingresa tu edad por favor");
 console.log(nombreUsuario);
 console.log(nombreUsuario.length);
@@ -284,7 +284,7 @@ let edadDecimal = parseFloat(edadUsuario);
 console.log(typeof edadDefinitiva);
 console.log(edadDefinitiva);
 console.log(typeof edadDecimal);
-console.log(edadDecimal);
+console.log(edadDecimal); */
 
 /* GRUPO DE LOS NO HOMEROS */
 /* 
@@ -292,3 +292,16 @@ pedimos al cliente q nos ingrese el nombre de usuario
 si el nombre de usuario es Homero no se le debera permitir el ingreso al club 
 a menos que la cantidad de Homeros sea de 1 si es mayor o igual a 1 no se le permitira el ingreso al club
 */
+
+let username1 = prompt("ingresa tu nombre amigo");
+let Homeros = 0;
+
+if (username1.toLowerCase() === "homero" && Homeros === 0) {
+  alert("puedes entrara al club amiguillo");
+  Homeros++;
+  alert("la cantidad de homeros es: " + Homeros);
+} else if (username1.toLowerCase() != "homero") {
+  alert(`puedes entrar al club  amigo ${username1}`);
+} else {
+  alert("losiento amigo tenemos demasiados homeros en el club");
+}

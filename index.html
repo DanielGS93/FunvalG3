@@ -6,15 +6,13 @@
   <title>Mi Portafolio</title>
   <link rel="stylesheet" href="https://danielgs93.github.io/funvalg3/">
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-  <!-- Header -->
   <header class="bg-gray-900 text-white p-6">
     <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">Tu Nombre</h1>
+      <h1 class="text-2xl font-bold">Daniel Gamboa</h1>
       <nav>
         <ul class="flex space-x-4">
           <li><a href="#sobre-mi" class="hover:underline">Sobre mí</a></li>
@@ -25,7 +23,6 @@
     </div>
   </header>
 
-  <!-- Sobre mí -->
   <section id="sobre-mi" class="py-12 px-4 md:px-12">
     <div class="max-w-4xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
@@ -33,68 +30,112 @@
     </div>
   </section>
 
-  <!-- Proyectos -->
   <section id="proyectos" class="py-12 px-4 md:px-12 bg-white">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold mb-8 text-center">Proyectos</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <!-- Proyecto 1 -->
+
         <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
           <h3 class="text-xl font-semibold mb-2">Proyecto 1</h3>
           <p class="text-sm">Mi primera pagina basica en html</p>
           <a href="https://danielgs93.github.io/funvalg3/practica%201/index.html" class="text-blue-600 underline" > Pinche aqui <----- </a>
         </div>
-        <!-- Proyecto 2 -->
+
         <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
           <h3 class="text-xl font-semibold mb-2">Proyecto 2</h3>
           <p class="text-sm">Aqui una pequeña replica de una pagina</p>
           <a href="https://danielgs93.github.io/funvalg3/Practica%202/index.html" class="text-blue-600 underline" >Pinche aqui <----- </a>
         </div>
-        <!-- Proyecto 3 -->
+
         <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
           <h3 class="text-xl font-semibold mb-2">Proyecto 3</h3>
           <p class="text-sm">Otra de mis replicas a una pagina</p>
           <a href="https://danielgs93.github.io/funvalg3/Practica%203/index.html" class="text-blue-600 underline" >Pinche aqui <-----</a>
         </div>
-        <!-- Proyecto 5 -->
+
+
         <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
           <h3 class="text-xl font-semibold mb-2">Proyecto 5</h3>
           <p class="text-sm">Pequeño programa para calcular figuras geometricas</p>
           <a href="https://danielgs93.github.io/funvalg3/practica%205/index.html" class="text-blue-600 underline"  >Pinche Aqui <-----</a>
         </div>
+
+        <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Proyecto 6</h3>
+          <p class="text-sm">Pequeña aplicacion bancaria</p>
+          <a href="https://danielgs93.github.io/funvalg3/practica%206/index.html" class="text-blue-600 underline"  >Pinche Aqui <-----</a>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Proyecto 7</h3>
+          <p class="text-sm">Prueba de Arrays</p>
+          <a href="https://danielgs93.github.io/funvalg3/practica%207/index.html" class="text-blue-600 underline"  >Pinche Aqui <-----</a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section id="contacto" class="py-12 px-4 md:px-12">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-4">Contacto</h2>
-      <p class="text-lg mb-4">Aqui les dejo mi enlace con mi perfil de GITHUB : </p>
-      <a href="https://github.com/DanielGS93" class="text-blue-600 underline">https://danielgs93.github.io/funvalg3/</a>
-    </div>
-  </section>
 
-  <!-- Footer -->
+  <section id="contacto" class="py-12 px-4 md:px-12 bg-white">
+  <div class="max-w-2xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Contacto</h2>
+    <p class="text-lg mb-8">¿Quieres trabajar conmigo y desarrollar proyectos? Llena el siguiente formulario:</p>
+
+    <form action="https://formsubmit.co/danielgamboa.80@gmail.com" method="POST" class="space-y-6 text-left">
+
+      <div>
+        <label for="nombre" class="block text-sm font-medium mb-1">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+
+      <div>
+        <label for="email" class="block text-sm font-medium mb-1">Email</label>
+        <input type="email" id="email" name="email" required
+               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+
+      <div>
+        <label for="mensaje" class="block text-sm font-medium mb-1">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+
+
+      <div class="text-center">
+        <button type="submit"
+                class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+          Enviar
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
 <footer class="bg-gray-900 text-white text-center p-8 mt-12">
-  <p class="mb-6">© 2025 Tu Nombre. Todos los derechos reservados.</p>
+  <p class="mb-6">© 2025 Dani. Todos los derechos otorgados por el poderoso FunVal.</p>
 
-  <!-- Redes Sociales con estilo -->
+
   <div class="flex justify-center gap-6">
-    <!-- Facebook -->
+
     <a href="https://www.facebook.com/daniel.sepulveda.391/" target="_blank"
        class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition duration-300">
+       <img src="./imagenes portafolios/iconos/facebook-brands.svg" alt="Facebook" class="w-full h-full object-cover" />
       <i class="fab fa-facebook-f text-white text-xl"></i>
     </a>
 
-    <!-- Instagram -->
+
     <a href="https://www.instagram.com/dani__93gs/" target="_blank"
        class="w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-tr from-pink-500 to-yellow-500 hover:scale-110 transform transition duration-300">
+       <img src="./imagenes portafolios/iconos/instagram-brands.svg" alt="Instagram" class="w-full h-full object-cover" />
       <i class="fab fa-instagram text-white text-xl"></i>
     </a>
   </div>
 </footer>
-    <!-- Redes Sociales -->
+
     <div class="flex justify-center space-x-6">
       <a href="https://facebook.com/tuusuario" target="_blank" class="text-white text-2xl hover:text-blue-500">
         <i class="fab fa-facebook"></i>

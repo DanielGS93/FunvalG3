@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Infantil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./main.js"></script>
+</head>
+<body class="bg-blue-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-2xl rounded-3xl p-6 w-80 text-center space-y-4">
+    <h1 class="text-2xl font-bold text-pink-600">Calculadora Infantil</h1>
+
+    <div id="display" class="bg-gray-100 rounded-xl p-4 text-right text-2xl font-mono text-gray-700">
+      0
+    </div>
+
+    <div class="grid grid-cols-4 gap-3">
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn">/</button>
+
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn">x</button>
+
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">-</button>
+
+      <button class="btn">0</button>
+      <button class="btn">C</button>
+      <button class="btn">=</button>
+      <button class="btn">+</button>
+    </div>
+  </div>
+
+  <!-- Estilos personalizados -->
+  <style>
+    .btn {
+      @apply bg-pink-200 hover:bg-pink-300 text-lg font-bold py-2 rounded-xl transition duration-200;
+    }
+  </style>
+
+</body>
+</html>
