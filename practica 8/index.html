@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic Tac Toe</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #1f2937; /* Fondo oscuro */
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      user-select: none;
+    }
+
+    .game-container {
+      max-width: 360px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Encabezado */
+    .header-icons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .header-icons .icons {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .header-icons .icons .x {
+      color: #3ddbd9;
+    }
+    .header-icons .icons .o {
+      color: #fbbf24;
+    }
+
+    .turn-indicator {
+      background-color: #263238;
+      border-radius: 0.375rem;
+      color: #eee;
+      padding: 0.375rem 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .turn-indicator .icon-x {
+      color: #3ddbd9;
+      font-weight: 900;
+      font-size: 1.25rem;
+    }
+
+    .restart-btn {
+      background-color: #394549;
+      border: none;
+      border-radius: 0.375rem;
+      padding: 0.375rem 0.75rem;
+      font-size: 1.25rem;
+      cursor: pointer;
+      color: #cbd5e1;
+      transition: background-color 0.3s ease;
+    }
+    .restart-btn:hover {
+      background-color: #4e6466;
+    }
+
+    /* Tablero */
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .cell {
+      background-color: #263238;
+      border-radius: 0.375rem;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.4);
+      aspect-ratio: 1 / 1;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      font-weight: 900;
+      user-select: none;
+      color: transparent;
+      transition: color 0.3s ease;
+    }
+    .cell.x {
+      color: #3ddbd9;
+    }
+    .cell.o {
+      color: #fbbf24;
+    }
+    .cell.disabled {
+      cursor: default;
+    }
+
+    /* Resultados */
+    .results {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .result-box {
+      flex: 1;
+      border-radius: 0.375rem;
+      padding: 0.75rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      user-select: none;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.3);
+      color: #000;
+    }
+    .result-x {
+      background-color: #3ddbd9;
+    }
+    .result-ties {
+      background-color: #cbd5e1;
+    }
+    .result-o {
+      background-color: #fbbf24;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-container">
+    <div class="header-icons mb-3">
+      <div class="icons">
+        <span class="x">X</span>
+        <span class="o">O</span>
+      </div>
+      <div class="turn-indicator" aria-live="polite" aria-atomic="true">
+        <span class="icon-x">X</span> TURN
+      </div>
+      <button class="restart-btn" id="restartBtn" aria-label="Reiniciar juego" title="Reiniciar juego">↻</button>
+    </div>
+
+    <div class="board" id="board" role="grid" aria-label="Tablero de Tic Tac Toe" aria-readonly="true">
+      <div class="cell" role="gridcell" data-index="0" tabindex="0" aria-label="Celda 1"></div>
+      <div class="cell" role="gridcell" data-index="1" tabindex="0" aria-label="Celda 2"></div>
+      <div class="cell" role="gridcell" data-index="2" tabindex="0" aria-label="Celda 3"></div>
+      <div class="cell" role="gridcell" data-index="3" tabindex="0" aria-label="Celda 4"></div>
+      <div class="cell" role="gridcell" data-index="4" tabindex="0" aria-label="Celda 5"></div>
+      <div class="cell" role="gridcell" data-index="5" tabindex="0" aria-label="Celda 6"></div>
+      <div class="cell" role="gridcell" data-index="6" tabindex="0" aria-label="Celda 7"></div>
+      <div class="cell" role="gridcell" data-index="7" tabindex="0" aria-label="Celda 8"></div>
+      <div class="cell" role="gridcell" data-index="8" tabindex="0" aria-label="Celda 9"></div>
+    </div>
+
+    <div class="results" aria-live="polite" aria-atomic="true">
+      <div class="result-box result-x" id="scoreX">X (YOU) 0</div>
+      <div class="result-box result-ties" id="scoreTies">TIES 0</div>
+      <div class="result-box result-o" id="scoreO">O (CPU) 0</div>
+    </div>
+  </div>
+
+  <script>
+    const board = document.getElementById('board');
+    const cells = board.querySelectorAll('.cell');
+    const turnIndicator = document.querySelector('.turn-indicator .icon-x');
+    const restartBtn = document.getElementById('restartBtn');
+    const scoreX = document.getElementById('scoreX');
+    const scoreO = document.getElementById('scoreO');
+    const scoreTies = document.getElementById('scoreTies');
+
+    let boardState = Array(9).fill(null);
+    let currentPlayer = 'X';
+    let scores = { X: 0, O: 0, Ties: 0 };
+    let gameOver = false;
+
+    function checkWinner() {
+      const wins = [
+        [0,1,2],[3,4,5],[6,7,8],
+        [0,3,6],[1,4,7],[2,5,8],
+        [0,4,8],[2,4,6]
+      ];
+
+      for (const combo of wins) {
+        const [a,b,c] = combo;
+        if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
+          return boardState[a];
+        }
+      }
+      return null;
+    }
+
+    function isBoardFull() {
+      return boardState.every(cell => cell !== null);
+    }
+
+    function computerMove() {
+      // Movimiento CPU, elige un espacio vacío al azar
+      const emptyIndices = boardState.map((v,i) => v === null ? i : null).filter(i => i !== null);
+      if(emptyIndices.length === 0) return;
+
+      // Aquí puedes mejorar el AI para que sea mas inteligente y dificil
+      const randomIndex = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+      makeMove(randomIndex, 'O');
+    }
+
+    function makeMove(index, player) {
+      if (gameOver || boardState[index] !== null) return;
+
+      boardState[index] = player;
+      const cell = cells[index];
+      cell.classList.add(player.toLowerCase());
+      cell.textContent = player;
+
+      const winner = checkWinner();
+
+      if (winner) {
+        gameOver = true;
+        scores[winner]++;
+        updateScores();
+        alert(`¡Ganador: ${winner}!`);
+        disableBoard();
+        return;
+      }
+
+      if (isBoardFull()) {
+        gameOver = true;
+        scores.Ties++;
+        updateScores();
+        alert('¡Empate!');
+        disableBoard();
+        return;
+      }
+
+      // Cambiar turno
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+      turnIndicator.textContent = currentPlayer;
+
+      if (currentPlayer === 'O' && !gameOver) {
+        setTimeout(computerMove, 400);
+      }
+    }
+
+    function disableBoard() {
+      cells.forEach(cell => cell.classList.add('disabled'));
+    }
+
+    function enableBoard() {
+      cells.forEach(cell => {
+        cell.classList.remove('disabled');
+        cell.textContent = '';
+        cell.classList.remove('x','o');
+      });
+      gameOver = false;
+      boardState.fill(null);
+      currentPlayer = 'X';
+      turnIndicator.textContent = currentPlayer;
+    }
+
+    function updateScores() {
+      scoreX.textContent = `X (YOU) ${scores.X}`;
+      scoreO.textContent = `O (CPU) ${scores.O}`;
+      scoreTies.textContent = `TIES ${scores.Ties}`;
+    }
+
+    // Eventos listeners
+    cells.forEach(cell => {
+      cell.addEventListener('click', () => {
+        if (currentPlayer === 'X' && !gameOver) {
+          makeMove(parseInt(cell.dataset.index), 'X');
+        }
+      });
+      cell.addEventListener('keydown', (e) => {
+        if ((e.key === 'Enter' || e.key === ' ') && currentPlayer === 'X' && !gameOver) {
+          makeMove(parseInt(cell.dataset.index), 'X');
+        }
+      });
+    });
+
+    restartBtn.addEventListener('click', () => {
+      enableBoard();
+    });
+
+    // Iniciar juego
+    enableBoard();
+    updateScores();
+  </script>
+
+</body>
+</html>
