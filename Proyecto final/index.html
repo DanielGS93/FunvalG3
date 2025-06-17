@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto final </title>
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-black dark:text-white transition-colors duration-300">
+
+    <header>   <button id="modo-toggle" class="ml-4 text-white border px-3 py-1 rounded hover:bg-gray-800">
+  🌙/☀️
+</button>
+
+</header>
+
+    <li><a href="proyectos.html" class="hover:underline">Proyectos</a></li>
+
+    <script>
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+  }
+</script>
+
+<script>
+  const toggle = document.getElementById('modo-toggle');
+  const root = document.documentElement;
+
+  // Cargar preferencia guardada
+  if (localStorage.getItem('tema') === 'dark') {
+    root.classList.add('dark');
+  }
+
+  toggle.addEventListener('click', () => {
+    root.classList.toggle('dark');
+    const esOscuro = root.classList.contains('dark');
+    localStorage.setItem('tema', esOscuro ? 'dark' : 'light');
+  });
+</script>
+
+</body>
+</html>

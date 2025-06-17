@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botones contador</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center font-sans">
+
+  <h1 class="text-3xl font-bold text-gray-800 mb-6">Contador</h1>
+
+  <div class="flex space-x-4 mb-6">
+    <button id="sumarBtn" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-xl shadow-md transition duration-200">
+      Sumar
+    </button>
+    <button id="restarBtn" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-xl shadow-md transition duration-200">
+      Restar
+    </button>
+  </div>
+
+  <p class="text-xl text-gray-700">El contador está en: <span id="contador" class="font-bold text-2xl text-gray-900">0</span></p>
+
+  <script src="main.js"></script>
+</body>
+</html>
