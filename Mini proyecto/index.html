@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio - Daniel Antonio</title>
+  <link href="style.css" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          dark: "#0D1117",
+          light: "#FFFFFF",
+          highlight: "#E3FF6A",
+          neonGreen: "#A4FF7A",
+          deepBlue: "#1E293B",
+          softGray: "#8892B0",
+        },
+        backgroundImage: {
+          "gradient-main": "linear-gradient(135deg, #1E293B 0%, #0D1117 100%)",
+        },
+      },
+    },
+  };
+</script>
+
+</head>
+<body class="bg-dark text-light font-sans">
+
+  <header class="flex justify-between items-center p-6 bg-gradient-main">
+    <h1 class="text-2xl font-bold">Daniel Antonio</h1>
+    <nav class="space-x-4">
+      <a href="#inicio" class="hover:text-highlight">Inicio</a>
+      <a href="#habilidades" class="hover:text-highlight">Habilidades</a>
+      <a href="#proyectos" class="hover:text-highlight">Proyectos</a>
+      <a href="#contacto" class="hover:text-highlight">Contacto</a>
+      <a href="#contacto" class="bg-highlight text-dark px-4 py-2 rounded font-semibold">Contáctame</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="text-center py-20">
+    <img src="./imagenes/503906291_10237141379815718_6330108588908506550_n.jpg" alt="Foto del desarrollador" class="w-32 h-32 rounded-full mx-auto mb-4" />
+    <h2 class="text-4xl font-bold mb-2">Hola, soy Dani</h2>
+    <p class="text-softGray mb-6">Desarrollador Web Full Stack</p>
+    <a href="https://danielgs93.github.io/funvalg3/" class="text-highlight underline">Ver proyectos</a>
+  </section>
+
+
+  <section class="py-16 px-6 bg-gradient-main text-center">
+    <h3 class="text-3xl font-bold mb-4">¿Quién soy?</h3>
+    <p class="text-softGray max-w-xl mx-auto">Apasionado por crear experiencias web modernas, funcionales y responsivas. Me encanta trabajar con tecnologías como React, Tailwind y Node.js.</p>
+  </section>
+
+  <section id="habilidades" class="py-16 px-6 text-center">
+    <h3 class="text-3xl font-bold mb-8">Habilidades</h3>
+    <div class="flex flex-wrap justify-center gap-8">
+      <div>
+        <img src="./imagenes/HTML_logo.png" alt="HTML" class="w-12 mx-auto" />
+        <p>HTML - 3 años</p>
+      </div>
+      <div>
+        <img src="./imagenes/CSS-Logo.png" alt="CSS" class="w-12 mx-auto" />
+        <p>CSS - 3 años</p>
+      </div>
+      <div>
+        <img src="./imagenes/JavaScript-logo.png" alt="JS" class="w-12 mx-auto" />
+        <p>JavaScript - 2 años</p>
+      </div>
+  
+    </div>
+    <a href="./imagenes/CVDanielGamboa..pdf.pdf_2025_2_18.pdf" download class="mt-6 inline-block bg-highlight text-dark px-6 py-2 rounded font-semibold">Descargar CV</a>
+  </section>
+
+ 
+  <section id="proyectos" class="py-16 px-6 text-center bg-gradient-main">
+    <h3 class="text-3xl font-bold mb-8">Proyectos propios</h3>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-deepBlue p-4 rounded-lg shadow">
+        <h4 class="font-semibold">Mi GitHub Proyectos</h4>
+        <p class="text-softGray text-sm">Aqui mi GitHub con todos los avances </p>
+        <a href="https://github.com/DanielGS93/funvalg3" class="text-highlight text-sm underline">Ver en GitHub</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="contacto" class="py-16 px-6 text-center">
+    <h3 class="text-3xl font-bold mb-8">Contacto</h3>
+    <form action="https://formspree.io/f/xrbkyovb" method="POST" class="max-w-md mx-auto space-y-4">
+  <input type="text" name="name" placeholder="Tu nombre" required class="w-full p-2 rounded bg-dark border border-softGray text-light" />
+  <input type="email" name="_replyto" placeholder="Correo electrónico" required class="w-full p-2 rounded bg-dark border border-softGray text-light" />
+  <textarea name="message" placeholder="Tu mensaje" rows="4" required class="w-full p-2 rounded bg-dark border border-softGray text-light"></textarea>
+  <button type="submit" class="bg-highlight text-dark px-6 py-2 rounded font-semibold hover:bg-neonGreen transition">Enviar mensaje</button>
+</form>
+
+  </section>
+
+  <footer class="text-center py-4 text-softGray text-sm">© 2025 Dani Antony - Todos los derechos reservados por el poderoso FunVal</footer>
+</body>
+</html>

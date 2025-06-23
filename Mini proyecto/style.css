@@ -1,0 +1,30 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-dark: #0D1117;
+    --color-light: #FFFFFF;
+    --color-highlight: #E3FF6A;
+    --color-neon-green: #A4FF7A;
+    --color-deep-blue: #1E293B;
+    --color-soft-gray: #8892B0;
+    --gradient-main: linear-gradient(135deg, #1E293B 0%, #0D1117 100%);
+  }
+}
+
+@layer utilities {
+  .bg-gradient-main {
+    background-image: var(--gradient-main);
+  }
+  .bg-dark { background-color: var(--color-dark); }
+  .text-light { color: var(--color-light); }
+  .text-softGray { color: var(--color-soft-gray); }
+  .bg-highlight { background-color: var(--color-highlight); }
+  .text-dark { color: var(--color-dark); }
+  .hover\:text-highlight:hover { color: var(--color-highlight); }
+  .hover\:bg-neonGreen:hover { background-color: var(--color-neon-green); }
+  .bg-deepBlue { background-color: var(--color-deep-blue); }
+}
