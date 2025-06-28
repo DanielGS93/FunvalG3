@@ -313,6 +313,12 @@
   .z-50 {
     z-index: 50;
   }
+  .col-3 {
+    grid-column: 3;
+  }
+  .col-6 {
+    grid-column: 6;
+  }
   .col-12 {
     grid-column: 12;
   }
@@ -502,6 +508,9 @@
   }
   .w-80 {
     width: calc(var(--spacing) * 80);
+  }
+  .w-100 {
+    width: calc(var(--spacing) * 100);
   }
   .w-\[30\%\] {
     width: 30%;
